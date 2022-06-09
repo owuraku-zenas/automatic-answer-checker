@@ -1,0 +1,97 @@
+.wrapper {
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    /* height: 100vh; */
+    align-items: center;
+}
+
+
+.questions__area {
+    /* background-color: bisque; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 900px;
+    width: 100%;
+    /* background-image: url("../images/nguyen-dang-hoang-nhu-qDgTQOYk6B8-unsplash.jpg"); */
+    background-size: cover;
+    /* height: 100vh; */
+    margin-top: 50px;
+}
+
+.header {
+    padding: 20px;
+}
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: rgba(196, 228, 243, 0.9); */
+    border-radius: 2px;
+    margin: 50px 0;
+}
+
+.question {
+    width: 1000px;
+    min-width: 500px;
+    height: 110px;
+    margin: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-around;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%),
+        0 6px 20px 0 rgb(0 0 0 / 19%);
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+}
+
+.label {
+    width: 100%;
+    font-size: x-large;
+
+}
+
+.input {
+    width: 95%;
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid black;
+    padding-left: 20px;
+    font-size: larger;
+}
+
+.submit__button {
+    margin: 0 28px;
+    margin-bottom: 10px;
+    border: none;
+    padding: 10px 50px;
+    font-size: large;
+    background-color: rgb(98, 174, 240);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%),
+        0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 30px;
+}
+
+.clear {
+    border: none;
+    padding: 10px 20px;
+    margin: 8px;
+    font-size: large;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%),
+        0 6px 20px 0 rgb(0 0 0 / 19%);
+    background-color: rgb(252, 1, 1);
+    color: white;
+    border-radius: 4px;
+}
