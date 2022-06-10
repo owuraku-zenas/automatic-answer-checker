@@ -1,0 +1,43 @@
+.page {
+    background-color: aqua;
+    margin-top: 40px;
+}
+
+h1 {
+    padding: 40px 80px;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.courses {
+    background-color: rgb(124, 124, 124);
+    padding: 40px 120px;
+    display: flex;
+    /* justify-content: space-around; */
+    gap: 60px 60px;
+    flex-wrap: wrap;
+}
+
+.course {
+    background-color: white;
+    height: 100px;
+    width: 200px;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%),
+        0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.icon {
+    font-size: 60px;
+    display: flex;
+}

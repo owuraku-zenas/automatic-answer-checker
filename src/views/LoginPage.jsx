@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import AuthContext from '../context/AuthProvider';
 import styles from "../styles/LoginPage.module.css";
 import TestContext from '../context/TestProvider';
+import useAuth from '../hooks/useAuth';
 
 
 
@@ -20,7 +21,8 @@ function LoginPage() {
   const LOGIN_URL = '/auth'
   const GET_TEST_URL = '/get_test'
 
-  const { setAuth, setScore } = useContext(AuthContext)
+  const {setAuth } = useAuth()
+  const { setScore } = useContext(AuthContext)
   const { setQuestions } = useContext(TestContext)
 
   const formHandler = async (event) => {
@@ -28,6 +30,7 @@ function LoginPage() {
 
     if (type === "student") {
       //TODO: Get student Questions and redirect to questions page
+      //TODO Verify Request & Response Stucture
       try {
         const response = await axios.post(
           GET_TEST_URL,
@@ -41,11 +44,12 @@ function LoginPage() {
         )
 
         const isCompleted = response?.data?.isCompleted
+        const role = "student"
+        setAuth({ userID, password, role })
 
         if (!isCompleted) {
           const questions = response?.data?.questions
           setQuestions(questions)
-          setAuth({ userID, password })
           navigate("/questions")
         } else {
           const result = response?.data?.result
@@ -77,10 +81,11 @@ function LoginPage() {
         )
 
         const accessToken = response?.data?.accessToken
-        const roles = response?.data?.roles
+        const role = "admin"
 
-        setAuth({ userID, password, roles, accessToken })
+        setAuth({ userID, password, role, accessToken })
           //TODO: Redirect to Admin Page
+          navigate("/admin/courses")
 
       } catch (error) {
         if (!error?.response) {
@@ -153,7 +158,7 @@ function LoginPage() {
             }
             required
           >
-            <option value="" disabled selected hidden>--Select User Type--</option>
+            <option className={styles.placeholder} value="" disabled selected hidden>Select User Type</option>
             <option value="student">Student</option>
             <option value="admin">Admin</option>
           </select>

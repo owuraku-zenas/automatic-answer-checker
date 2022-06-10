@@ -36,7 +36,7 @@
 .question {
     width: 1000px;
     min-width: 500px;
-    height: 110px;
+    height: 80px;
     margin: 30px;
     padding: 20px;
     display: flex;
@@ -52,7 +52,8 @@
 
 .label {
     width: 100%;
-    font-size: x-large;
+    font-size: large;
+    padding: 0 40px;
 
 }
 
@@ -62,7 +63,7 @@
     border: none;
     border-bottom: 2px solid black;
     padding-left: 20px;
-    font-size: larger;
+    font-size: medium;
 }
 
 .submit__button {
