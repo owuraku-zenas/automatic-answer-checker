@@ -1,0 +1,111 @@
+.test__area {
+    /* background-color: bisque; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 900px;
+    width: 100%;
+}
+
+header {
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    border-radius: 2px;
+    margin: 50px 0;
+}
+
+.course__name {
+    margin: 0;
+    padding: 0;
+}
+
+.question {
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-width: 500px;
+    min-height: 80px;
+    margin: 30px;
+    padding: 20px;
+    /* align-items: center; */
+    gap: 20px;
+    justify-content: space-around;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%),
+        0 6px 20px 0 rgb(0 0 0 / 19%);
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+}
+
+.qna {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: larger;
+}
+
+.label,
+.answer {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.box {
+    margin: 0 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.submit__button {
+    border: none;
+    padding: 10px 50px;
+    font-size: large;
+    background-color: rgb(98, 174, 240);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%),
+        0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    border: none;
+    padding: 10px 20px;
+    font-size: large;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%),
+        0 6px 20px 0 rgb(0 0 0 / 19%);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    flex-direction: row;
+}
+
+.delete {
+    background-color: rgb(243, 79, 79);
+}
+
+.edit {
+    background-color: rgb(98, 174, 240);
+}

@@ -10,14 +10,14 @@ function Navbar() {
 
   return (
     <div className={styles.nav__bar}>
-      <span
+      <span className={styles.span}
         onClick={
           () => {
             // TODO Admin goes editing questions and student goes to questions
             if (auth?.role === "student") {
               navigate("/questions")
             } else if(auth?.role === "admin") {
-              navigate("/admin/courses")
+              navigate("/admin/tests")
             } else {
               navigate("/")
             }

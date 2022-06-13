@@ -21,7 +21,7 @@ function LoginPage() {
   const LOGIN_URL = '/auth'
   const GET_TEST_URL = '/get_test'
 
-  const {setAuth } = useAuth()
+  const { setAuth } = useAuth()
   const { setScore } = useContext(AuthContext)
   const { setQuestions } = useContext(TestContext)
 
@@ -60,7 +60,7 @@ function LoginPage() {
         if (!error?.response) {
           setErrorMessage("No Server Response")
         } else if (error.response?.status === 400) {
-          setErrorMessage("Missing Course Code")
+          setErrorMessage("Missing Test Code")
         } else if (error.response?.status === 400) {
           setErrorMessage("Unauthorized")
         } else {
@@ -84,8 +84,8 @@ function LoginPage() {
         const role = "admin"
 
         setAuth({ userID, password, role, accessToken })
-          //TODO: Redirect to Admin Page
-          navigate("/admin/courses")
+        //TODO: Redirect to Admin Page
+        navigate("/admin/tests")
 
       } catch (error) {
         if (!error?.response) {
@@ -131,7 +131,7 @@ function LoginPage() {
           />
           <input className={styles.input}
             type={isStudent ? "text" : "password"}
-            placeholder={isStudent ? "Course Code" : "PIN"}
+            placeholder={isStudent ? "Test Code" : "PIN"}
             value={password}
             onChange={
               (e) => {

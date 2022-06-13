@@ -1,11 +1,12 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import CoursesPage from './views/admin_views/CoursesPage'
+import TestsPage from './views/admin_views/TestsPage'
 import Navbar from './components/Navbar'
 import LoginPage from './views/LoginPage'
 import QuestionsPage from './views/QuestionsPage'
 import RequireAuth from './views/RequireAuth'
 import ScorePage from './views/ScorePage'
+import TestPage from './views/admin_views/TestPage'
 
 function AppRouter() {
     return (
@@ -13,7 +14,8 @@ function AppRouter() {
             <Navbar />
             <Routes>
                 {/* Testing Routes */}
-                <Route path='/admin/courses' element={ <CoursesPage /> } />
+                <Route path='/admin/tests' element={<TestsPage />} />
+                <Route path='/admin/test' element={<TestPage />} />
                 <Route path='/questions' element={<QuestionsPage />} />
 
                 {/* General Routes */}
@@ -29,7 +31,7 @@ function AppRouter() {
                 </Route>
                 <Route element={<RequireAuth allowedRole={"admin"} />}>
                     {/* TODO Admin Routes */}
-                    <Route path='/admin/courses' element={ <CoursesPage /> } />
+                    <Route path='/admin/tests' element={<TestsPage />} />
                 </Route>
             </Routes>
         </Router>

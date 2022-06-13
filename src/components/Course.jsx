@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../styles/CoursesPage.module.css'
+import styles from '../styles/TestsPage.module.css'
 
 function Course({ courseName, courseCode, icon, onClick }) {
 
@@ -7,13 +7,13 @@ function Course({ courseName, courseCode, icon, onClick }) {
         <div className={styles.course} onClick={onClick}>
             {
                 !icon
-                ? <h2> {courseName} </h2>
-                : <h2 className={styles.icon} > {courseName} </h2>
+                    ? <h2> {courseName} </h2>
+                    : <h2 className={styles.icon} > {courseName} </h2>
             }
             {
                 !icon
-                ? <p>Course Code: {courseCode} </p>
-                : null
+                    ? <p>Test Code: {courseCode} </p>
+                    : null
             }
         </div>
     )

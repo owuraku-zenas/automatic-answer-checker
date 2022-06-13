@@ -1,37 +1,21 @@
 import React from 'react'
 import ReactDom from 'react-dom'
+import styles from '../styles/Modal.module.css'
+import { IoMdClose } from "react-icons/io";
 
-const MODAL_STYLES = {
-    position: "fixed",
-    top: "50%",
-    left: "45%",
-    trasform: "translate(-50%, -50%)",
-    backgroundColor: "#fff",
-    padding: "50px",
-    zIndex: 100000,
-    display: "flex",
-    flexDirection: "column"
-
-}
-
-const OVERLAY_STYLE = {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: "rgba(0, 0, 0, .7)",
-    zIndex: 1000
-}
 
 function Modal({ open, children, onClose }) {
     if (open) {
         return ReactDom.createPortal(
             <>
-                <div style={OVERLAY_STYLE} />
-                <div style={MODAL_STYLES}>
-                    <button onClick={onClose}>Close Modal</button>
+                <div className={styles.overlay}/>
+                <div className={styles.modal}>
+                    <div className={styles.header}>
+                        <button className={styles.close__button} onClick={onClose}><IoMdClose /></button>
+                    </div>
+                    <div className={styles.body}>
                     {children}
+                    </div>
                 </div>
             </>,
             document.getElementById('portal')

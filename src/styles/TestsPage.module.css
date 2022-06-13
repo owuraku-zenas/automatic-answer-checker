@@ -3,7 +3,7 @@
     margin-top: 40px;
 }
 
-h1 {
+.title {
     padding: 40px 80px;
     text-align: center;
 }
@@ -12,7 +12,7 @@ h2 {
     text-align: center;
 }
 
-.courses {
+.tests {
     background-color: rgb(124, 124, 124);
     padding: 40px 120px;
     display: flex;
