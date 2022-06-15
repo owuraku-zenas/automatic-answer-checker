@@ -57,7 +57,7 @@ function TestPage() {
             showCancelButton: true,
             confirmButtonColor: 'rgb(63, 168, 238)',
             cancelButtonColor: 'rgb(243, 79, 79)',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'Yes, Set Questions'
         }).then((result) => {
             if (result.isConfirmed) {
                 //   TODO Set Question
@@ -99,7 +99,7 @@ function TestPage() {
 
                     </div>
                     <div className={styles.box}>
-                        <button className={styles.submit__button} onClick={() => setIsOpen(true)}>Add Question</button>
+                        <button className={styles.submit__button} onClick={() => editQuestion() }>Add Question</button>
                         <button className={styles.submit__button} onClick={ () => submitQuestions() } >Set Test</button>
                     </div>
                 </div>
