@@ -8,6 +8,10 @@ function Navbar() {
   const { auth } = useAuth()
   const navigate = useNavigate()
 
+  if (!auth?.user) {
+    return null;
+  }
+
   return (
     <div className={styles.nav__bar}>
       <span className={styles.span}
