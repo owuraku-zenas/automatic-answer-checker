@@ -3,7 +3,7 @@ import styles from '../styles/TestPage.module.css'
 import { BiEdit } from "react-icons/bi";
 import { RiDeleteBin6Line } from "react-icons/ri"
 
-function TestQuestion({ question, answer, mark, editQuestion, deleteQuestion }) {
+function TestQuestion({ question, answer, mark, editQuestionToggle, deleteQuestion, id }) {
     return (
         <div className={styles.question}>
             <div className={styles.qna} >
@@ -33,8 +33,8 @@ function TestQuestion({ question, answer, mark, editQuestion, deleteQuestion }) 
                 </div>
             </div>
             <div className={styles.buttons}>
-                <button className={styles.delete} onClick={() => deleteQuestion(2)} > <RiDeleteBin6Line /> Delete</button>
-                <button className={styles.edit} onClick={ () => editQuestion(2) }><BiEdit />Edit</button>
+                <button className={styles.delete} onClick={() => deleteQuestion(id)} > <RiDeleteBin6Line /> Delete</button>
+                <button className={styles.edit} onClick={ () => editQuestionToggle(id) }><BiEdit />Edit</button>
             </div>
         </div>
 

@@ -1,17 +1,16 @@
 import React, { useState } from 'react'
-import { BiEdit } from 'react-icons/bi'
+import { BsFillPlusCircleFill } from 'react-icons/bs'
 import styles from "../styles/EditQuestion.module.css"
 
-function EditQuestion({ data, editQuestion, id, onClose }) {
+function AddQuestion({ addQuestion, onClose }) {
 
-    const [question, setQuestion] = useState(data.question)
-    const [answer, setAnswer] = useState(data.answer)
-    const [mark, setMark] = useState(data.mark)
-    // console.log(data);
+    const [question, setQuestion] = useState("")
+    const [answer, setAnswer] = useState("")
+    const [mark, setMark] = useState(1)
 
     return (
         <div>
-            <h2>Edit Question</h2>
+            <h2>Add Question</h2>
             <form className={styles.form}>
                 <div className={styles.group}>
                     <label htmlFor="question">Question: </label>
@@ -60,14 +59,16 @@ function EditQuestion({ data, editQuestion, id, onClose }) {
                     />
                 </div>
                 <div className={styles.button}>
-                    <button onClick={
+                    <button
+                    onClick={
                         (event) => {
                             event.preventDefault()
-                            editQuestion(id, question, answer, mark)
+                            addQuestion(Date.now(), question, answer, mark)
                             onClose()
                         }
-                    }>
-                        <BiEdit />Edit
+                    }
+                    >
+                        <BsFillPlusCircleFill />Add
                     </button>
                 </div>
             </form>
@@ -75,4 +76,4 @@ function EditQuestion({ data, editQuestion, id, onClose }) {
     )
 }
 
-export default EditQuestion
+export default AddQuestion

@@ -1,14 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from "../styles/QuestionsPage.module.css"
 
-function Question( { question } ) {
+function Question({ question, id, updateAnswers }) {
+    const [answer, setAnswer] = useState(null)
     return (
         <div className={styles.question}>
-            <label htmlFor="" className={styles.label}>
+            <label htmlFor={id} className={styles.label}>
                 {question}
             </label>
             {/* TODO Fix input focus border */}
-            <input type="text" className={styles.input} />
+            <input
+                type="text"
+                id={id}
+                className={styles.input}
+                value={answer || ""}
+                onChange = {
+                    (event) => {
+                        setAnswer(event.target.value)
+                    }
+                }
+                onBlur={
+                    () => {
+                        updateAnswers(id, answer)
+                    }
+                }
+                required
+            />
         </div>
     )
 }
